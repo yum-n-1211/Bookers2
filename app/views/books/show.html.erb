@@ -3,7 +3,11 @@
 <table>
   <tbody>
     <tr>
-      <td><%= @book.user.name %></td>
+      <td>
+        <%= image_tag @book.user.get_profile_image("40x40") %>
+        <br>
+        <%= link_to @book.user.name, user_path(@book.user.id) %>
+      </td>
       <td><%= @book.title %></td>
       <td><%= @book.body %></td>
       <td>
