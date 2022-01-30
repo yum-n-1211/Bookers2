@@ -1,7 +1,17 @@
 <div class="container px-5 px-sm-0">
+
+  <% if @book.errors.any? %>
+    <%= @book.errors.count %>errors prohibited this obj from being saved:
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div class="row">
     <%= render partial: 'layouts/left', locals: {user: current_user ,book: @book} %>
-  
+
   <div class="col-md-8 offset-md-1">
 
     <h2>Books</h2>
@@ -27,6 +37,6 @@
     </table>
 
   </div>
-  
+
   </div>
 </div>
