@@ -13,11 +13,12 @@
       </ul>
     <% end %>
 
-      <%= form_with model: @user, url: user_path(@user.id), method: :patch, local:true do |f| %>
+      <%= form_with model: @user, url: user_path(@user.id), local:true do |f| %>
       <label for="user_name">Name</label>
       <br><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
       <br><label for="user_image">Image</label>
       <br><%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
+
       <br><label for="user_introduction">Introduction</label>
       <br><%= f.text_area :introduction %>
 
