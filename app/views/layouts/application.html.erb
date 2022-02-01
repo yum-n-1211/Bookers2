@@ -71,7 +71,9 @@
   </header>
 
   <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
+    <div class="text-success">
+      <%= content_tag(:div, value, class: "#{key}") %>
+    </div>
   <% end %>
 
   <%= yield %>
